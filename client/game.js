@@ -13,6 +13,7 @@ Game.BOOT.prototype = {
     this.game.stage.backgroundColor = '#eee';
     Game.operate = new Game.System.Operate(this.game);
     Game.player = new Game.System.Player(this.game);
+    Game.npc = new Game.System.Npc(this.game);
   },
   create: function() {
     this.game.state.start('LOAD');

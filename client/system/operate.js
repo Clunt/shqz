@@ -15,6 +15,19 @@ Game.System.Operate.prototype = {
       x: this.game.custom.map.collision.getTileX(pointer.worldX),
       y: this.game.custom.map.collision.getTileY(pointer.worldY)
     };
+    // var bodies = game.physics.p2.hitTest(pointer.position, [Game.npc]);
+    var bodies = game.physics.p2.hitTest(pointer.position);
+    if (bodies.length > 0) {
+      var result = '';
+      for (var i = 0; i < bodies.length; i++) {
+        console.log(bodies[i]);
+        // result = result + bodies[i].parent.sprite.key;
+        // if (i < bodies.length - 1) {
+        //   result = result + ', ';
+        // }
+      }
+      // console.log(result);
+    }
     var tile = this.game.custom.map.getTile(positoin.x, positoin.y, this.game.custom.map.collision);
     if (!tile.collides) {
       Game.player.move(tile);

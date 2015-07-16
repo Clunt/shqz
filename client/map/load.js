@@ -2,6 +2,7 @@ Game.Map.LOAD = function() {};
 Game.Map.LOAD.prototype = {
   preload: function() {
     Game.player.preload();
+    Game.npc.preload();
   },
   create: function() {
     this.game.state.start('XXCD');
